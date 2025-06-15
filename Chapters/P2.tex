@@ -1,7 +1,33 @@
-% \section{Schrödinger Equation}
+\section{Schrödinger Equation}
 
-% \subsection{Time Dependent Schrödinger Equation}
-% \frame{Time Dependent Schrödinger Equation}
+\subsection{Time Dependent Schrödinger Equation}
+
+\begin{frame}{Time Dependent Schrödinger Equation}
+	The time-dependent Schrödinger equation describes how the quantum state of a system evolves over time. It is given by:
+	\begin{equation*}
+		i\hbar \frac{\partial \Psi(\mathbf{r}, t)}{\partial t} = \hat{H} \Psi(\mathbf{r}, t)
+	\end{equation*}
+	where $\Psi(\mathbf{r}, t)$ is the wave function of the system, $i$ is the imaginary unit, $\hbar$ is the reduced Planck's constant, and $\hat{H}$ is the Hamiltonian operator representing the total energy of the system.
+	\begin{block}{Hamiltonian Operator}
+		The Hamiltonian operator $\hat{H}$ can be expressed as:
+		\begin{equation*}
+			\hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r})
+		\end{equation*}
+		where $m$ is the mass of the particle, $\nabla^2$ is the Laplacian operator, and $V(\mathbf{r})$ is the potential energy function.
+	\end{block}
+\end{frame}
+
+
+\begin{frame}{Time Dependent Schrödinger Equation (cont)}
+	The wave function $\Psi(\mathbf{r}, t)$ contains all the information about the quantum state of the system. The probability density of finding a particle at position $\mathbf{r}$ at time $t$ is given by:
+	\begin{equation*}
+		P(\mathbf{r}, t) = |\Psi(\mathbf{r}, t)|^2
+	\end{equation*}
+	The wave function must satisfy the normalization condition:
+	\begin{equation*}
+		\int |\Psi(\mathbf{r}, t)|^2 \, d^3r = 1
+	\end{equation*}
+\end{frame}
 
 
 % \subsection{Time Independent Schrödinger Equation}
