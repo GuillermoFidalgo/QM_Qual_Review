@@ -1,0 +1,224 @@
+
+\section[Wave Functions]{Wave Functions; State Functions and operators; uncertainty principle}
+\subsection{Wave Functions}
+
+\begin{frame}{Wave Functions}
+	The Schrödinger equation describes how the quantum state of a physical system changes over time. The wave function, denoted by $\Psi$, is a complex-valued function that contains all the information about the system.
+
+	\begin{block}{Schrödinger Equation}
+		\begin{equation*}
+			i\hbar \frac{\partial \Psi(\mathbf{r}, t)}{\partial t} = \hat{H} \Psi(\mathbf{r}, t)
+		\end{equation*}
+		where $\hat{H}$ is the Hamiltonian operator, which represents the total energy of the system.
+
+		In one dimension, the time-dependent Schrödinger equation can be written as:
+		\begin{equation*}
+			% -\frac{\hbar^2}{2m} \frac{d^2 \Psi(x)}{dx^2} + V(x) \Psi(x) = E \Psi(x)
+			i\hbar \frac{\partial \Psi(x, t)}{\partial t} = -\frac{\hbar^2}{2m} \frac{d^2 \Psi(x, t)}{dx^2} + V(x) \Psi(x, t)
+		\end{equation*}
+		where $V(x)$ is the potential energy and $m$ is the mass of the particle.
+
+	\end{block}
+
+\end{frame}
+
+\begin{frame}{Wave Functions (cont)}
+	The wave function collapses when a measurement (i.e. observation) is made.
+	In QM, we may only measure the probability of observing the position of a particle at specific time $t$ by computing $|\Psi(x,t)|^2$ or more precisely
+	\begin{block}
+
+		\[
+			\int_a^b |\Psi(x,t)|^2 \dd{x} = \int_a^b \Psi^*(x,t) \Psi(x,t) \dd{x}
+		\]
+
+	\end{block}
+\end{frame}
+
+\subsection{Stats review}
+
+\begin{frame}
+	\frametitle{Some important stats review}
+	\begin{description}
+		\item[mean] is the numerical average of multiple measurements at a time.
+		\item[median] the 50th percentile, second quantile, i.e. the value at which there
+		      is the same probability to measure any value below or after this value.
+		\item[mpv] the number that has the highest probability to be measured.
+		      Another name for the ``mode''.
+		\item[expectation value]  this a little misnomer. Same as the mean value in our case.
+	\end{description}
+	We comput these as follows
+	% this is a new change
+
+	\begin{onlyenv}<1>
+
+		\begin{block}{mean/expectation value}
+			The average is computed for a number of different moments of j as follows
+			\begin{gather}
+				\ev{j}= \sum_{j=0}^\infty j P(j) \qq{;} \ev{j^2} = \sum_{j=0}^\infty j^2 P(j) \qq{\dots} \ev{j^n} = \sum_{j=0}^\infty j^n P(j)\\
+				\text{In General} \hspace{1cm} \boxed{\ev{f(j)} = \sum_{j=0}^\infty f(j) P(j)}
+			\end{gather}
+
+		\end{block}
+
+	\end{onlyenv}
+
+	\begin{onlyenv}<2>
+
+		\begin{block}{median}
+			The formula depends on the number of observations or data points. First we order the data list
+			$\{X_1, X_2, \dots, X_n\}$ then
+			\[
+				\text{Median} =
+				\begin{cases}
+					\frac{X_{n/2} + X_{(n/2)+1}}{2} & \text{if } n \text{ is even} \\
+					X_{(n+1)/2}                     & \text{if } n \text{ is odd}
+				\end{cases}
+			\]
+
+		\end{block}
+
+	\end{onlyenv}
+
+\end{frame}
+
+
+\begin{frame}{Variance and Standard Deviation}
+	These measure the spread of a distribution (particularly the standard deviation).
+	First we find the deviation of each value from the mean.
+	\[
+		\Delta j = j - \ev j
+	\]
+
+	then we find the average of the \textit{square} of the deviations (why? Because the average deviation is \textbf{always} zero!). So now
+	\begin{align*}
+		\sigma^2 & =\ev{(\Delta j)^2} = \sum(\Delta j)^2 P(j)=\sum(j-\ev{j})^2 P(j) \\
+		         & =\sum\left(j^2-2 j \ev{j} + \ev{j}^2\right) P(j)                 \\
+		         & =\sum j^2 P(j)-2 \ev{j} \sum j P(j)+\ev{j}^2 \sum P(j)           \\
+		         & =\ev{ j^2}-2\ev{ j}\ev{ j}+\ev{ j}^2=\ev{ j^2}-\ev{ j}^2 .
+	\end{align*}
+
+	Finally $$\sigma = \sqrt{\ev{ j^2}-\ev{ j}^2}$$
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Probability density and properties for continuous functions}
+	$$ P_{ab} = \int_a^b \rho(x) \dd{x}$$
+	is the probability that $x$ lies between $a$ and $b$. The other properties are:
+	\begin{gather}
+		\int_{-\infty}^{+\infty} \rho(x) d x=1 \\
+		\langle x\rangle=\int_{-\infty}^{+\infty} x \rho(x) d x \\
+		\langle f(x)\rangle=\int_{-\infty}^{+\infty} f(x) \rho(x) d x \\
+		\sigma^2 \equiv\left\langle(\Delta x)^2\right\rangle=\left\langle x^2\right\rangle-\langle x\rangle^2
+	\end{gather}
+
+\end{frame}
+
+\subsection{Back to the wave function}
+
+\begin{frame}{Back to the wave function}{Normalizing the wave function}
+	To ensure that the wave function is properly normalized, we require that the integral of the absolute square of the wave function over all space equals 1:
+	\begin{equation*}
+		\int_{-\infty}^{+\infty} |\Psi(x)|^2 \, dx = 1
+	\end{equation*}
+	This condition ensures that the total probability of finding the particle in all space is equal to 1.
+	Now that we know that $\rho(x) = |\Psi(x)|^2$ is a probability density, the previous properties of probability density apply to it as well.
+\end{frame}
+
+
+\begin{frame}{Expectation values evolve with time (unlike the normalization of the wave function)}
+	% \begin{block}{Expectation value of an observable}
+		The expectation value of an observable $\hat{A}$ in a state described by the wave function $\Psi(x, t)$ is given by:
+		\begin{equation*}
+			\langle A \rangle = \int_{-\infty}^{+\infty} \Psi^*(x, t) \hat{A} \Psi(x, t) \, dx
+		\end{equation*}
+		where $\hat{A}$ is the operator corresponding to the observable $A$.
+	% \end{block}
+	So for the position operator $\hat{x}$, the expectation value is:
+	\begin{equation*}
+		\langle x \rangle = \int_{-\infty}^{+\infty} x |\Psi(x, t)|^2 \, dx
+	\end{equation*}
+	The evolution of the expectation value of position with time can be derived from the Schrödinger equation. If we differentiate the expectation value with respect to time, by using integration by parts we get:
+\begin{equation*}
+		\dv{\ev{x}}{t} = \int_{-\infty}^{+\infty} -\frac{i\hbar}{m} \Psi^* \pdv{\Psi}{x} \dd{x}
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}{Note on the expectation value of position}
+
+The expectation value $\ev{x}$ in quantum mechanics does not represent the average of repeated measurements on a single particle. After the first measurement, the wave function collapses, and subsequent measurements just repeat that result. Instead, $\ev{x}$ is the average of measurements made on an ensemble of identically prepared particles, each in the same quantum state.
+To find $\ev{x}$, you must either reset the particle to its original state after each measurement or use many identical particles and measure each one once. The expectation value is thus the average over many identical systems, not repeated measurements on one system.
+
+\end{frame}
+
+\begin{frame}{Momentun}
+	We were talking about $\dv{\ev x}{t}$, but this is only the ``velocity'' of the expectation value of position and \textit{not} the velocity of the particle itself. We still have that
+	\[
+		\dv{\ev x}{t} = \ev{v}  = -\frac{i\hbar}{m} \int_{-\infty}^{+\infty} \Psi^* \pdv{\Psi}{x} \dd{x}
+	\]
+	We are usually interested in the momentum of the particle, which is defined as:
+	\begin{equation*}
+		\ev p = m \dv{\ev x}{t} = -i\hbar \int_{-\infty}^{+\infty} \Psi^* \pdv{\Psi}{x} \dd{x}
+	\end{equation*}
+	More suggestively, we can write $\ev x$ and $\ev p$ as:
+	\begin{gather*}
+		\ev x =  \int_{-\infty}^{+\infty} \Psi^* [x] \Psi \dd{x}\\
+		\ev p = \int_{-\infty}^{+\infty} \Psi^* \left[-i\hbar (\pdv*{x}) \right] \Psi \dd{x}
+	\end{gather*}
+	The $x$ represents the position observable, and the operator $ p = -i\hbar (\pdv*{x})$ represents the momentum observable. We ``sandwich'' these operators between $\Psi^*$ and $\Psi$ and integrate to find the expectation values.
+\end{frame}
+
+
+\subsection{Uncertainty Principle}
+
+\begin{frame}{Uncertainty Principle}
+The wavelength of $\Psi$ is related to the momentum of the particle by the de Broglie formula.
+$$ p = \frac{h}{\lambda} = \frac{2\pi \hbar}{\lambda}$$
+
+where $h$ is Planck's constant and $p$ is the momentum of the particle.
+
+Thus a spread in wavelength corresponds to a spread in momentum. Quantitatively
+\begin{block}{Uncertainty Principle}
+	\begin{equation*}
+		\sigma_x \sigma_p \ge \frac{\hbar}{2}
+	\end{equation*}
+	where $\sigma_x$ is the uncertainty in position and $\sigma_p$ is the uncertainty in momentum.
+\end{block}
+
+
+
+
+%  The wave function $\Psi$ can be expressed in terms of its wavelength $\lambda$ as:
+% \begin{equation*}
+% 	\Psi(x) = A e^{i k x} = A e^{i \frac{2\pi}{\lambda} x}
+% \end{equation*}
+% The uncertainty in position $\Delta x$ and the uncertainty in momentum $\Delta p$ are related by the Heisenberg Uncertainty Principle, which states that it is impossible to simultaneously know both the exact position and exact momentum of a particle.
+
+% 	\begin{block}{Uncertainty Relation}
+% 		\begin{equation*}
+% 			\Delta x \Delta p \geq \frac{\hbar}{2}
+% 		\end{equation*}
+% 		where $\hbar$ is the reduced Planck's constant.
+% 	\end{block}
+
+% 	The principle implies that if we know the position of a particle very precisely (small $\Delta x$), then its momentum becomes very uncertain (large $\Delta p$), and vice versa.
+\end{frame}
+
+\begin{frame}{Uncertainty Principle}
+	\begin{block}{Heisenberg's Uncertainty Principle}
+		\begin{equation*}
+			\Delta x \Delta p \geq \frac{\hbar}{2}
+		\end{equation*}
+		where $\Delta x$ is the uncertainty in position and $\Delta p$ is the uncertainty in momentum.
+	\end{block}
+\end{frame}
+
+
+
+
+
+% \subsection{State Functions and operators}
+% \begin{frame}{State Functions and operators}
+
+% \end{frame}
