@@ -14,13 +14,14 @@
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=blue,
-	filecolor=magenta,
-	urlcolor=blue,
+	allcolors=.,
+	% linkcolor={blue!60!white},
+	% filecolor=magenta,
+	% urlcolor=blue,
 }
 
-\setlength{\columnseprule}{.5pt}
-\def\columnseprulecolor{\color{black}}
+% \setlength{\columnseprule}{.5pt}
+% \def\columnseprulecolor{\color{black}}
 
 
 \graphicspath{{Images/}}
@@ -42,3 +43,20 @@
 \newcommand{\thedate}{\today}
 \newcommand{\HW}{1}
 \newcommand{\kcoulomb}{\frac{1}{4\pi\epsilon_0}}
+
+
+\AtBeginSection[] {
+	\begin{frame}<beamer>
+		\frametitle{\insertsection}
+		\begin{multicols}{2}
+			\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/hide]
+		\end{multicols}
+	\end{frame}
+}
+
+\AtBeginSubsection[] {
+	\begin{frame}<beamer>
+		\frametitle{\insertsubsection}
+		\tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+	\end{frame}
+}

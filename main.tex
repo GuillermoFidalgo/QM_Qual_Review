@@ -1,24 +1,12 @@
-% \documentclass{report}
-% \input{HW_Template.tex}
-
-
 
 \documentclass[aspectratio=1610,compress]{beamer}
 \input{Beamer-Template.tex}
-
 % \useoutertheme{split}
+
 % \title{Template}
 \title[Qual Review]{Qualifier Review\\ Quantum Mechanics}
 \date{\thedate}
 
-%%%%%%%%%%%%%%%
-% for documents
-% \author{Guillermo Fidalgo Rodríguez} %[1] is to indicate connection with affil institute
-% \author{Tetiana}
-% \author{Roy}
-% \affil[1]{University of Puerto Rico - Mayagüez, Physics Department}
-
-%%%%%%%%%%%%%%%
 % for beamer
 \author[G. Fidalgo]{Guillermo A. Fidalgo Rodríguez}
 \institute[UA]{University of Alabama}
@@ -29,31 +17,6 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%% For Articles or reports
-% \maketitle
-% Set the page style to "fancy"...
-% \pagestyle{fancy}
-%... then configure it.
-% \fancyhead{} % clear all header fields
-% \fancyhead[L]{\textbf{Guillermo Fidalgo} }
-% \fancyhead[C]{Homework \HW}
-% \fancyhead[R]{\thedate}
-% \fancyfoot{} % clear all footer fields
-% \fancyfoot[LE,RO]{\thepage}
-% \fancyfoot[LO,CE]{From: K. Grant}
-% \fancyfoot[CO,RE]{To: Dean A. Smith}
-% Some content:
-% My content
-% \begin{enumerate}
-% 	\include{Questions/P1}
-% 	\include{Questions/P2}
-% 	%\include{Questions/P3}
-% 	%\include{Questions/P4}
-% 	%\include{Questions/P5}
-% 	% \include{Questions/P6}
-% \end{enumerate}
-
-%%%%%%%%%%%%%%%%%% For Beamer
 \begin{frame}
 	\titlepage
 	\hfill
@@ -61,13 +24,14 @@
 \end{frame}
 
 \begin{frame}{TOC}
-	\tableofcontents
+	\begin{multicols}{2}
+		\tableofcontents[sectionstyle=show,subsectionstyle=hide]
+	\end{multicols}
 \end{frame}
 
 \include{Chapters/P1}
 \include{Chapters/P2}
-
-% \include{Chapters/P3}
+\include{Chapters/P3}
 % \include{Chapters/P4}
 % \include{Chapters/P5}
 % \include{Chapters/P6}

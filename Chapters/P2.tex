@@ -3,14 +3,14 @@
 \subsection[TISE]{Time Independent Schrödinger Equation}
 
 \begin{frame}{Time Independent Schrödinger Equation}
-    The time-independent Schrödinger equation is  given by:
-    \begin{equation*}
-        \hat{H} \psi(\mathbf{r}) = E \psi(\mathbf{r})
-    \end{equation*}
-    Another way to write it is:
-    \begin{equation*}
-        -\frac{\hbar^2}{2m} \nabla^2 \psi(\mathbf{r}) + V(\mathbf{r}) \psi(\mathbf{r}) = E \psi(\mathbf{r})
-    \end{equation*}
+	The time-independent Schrödinger equation is  given by:
+	\begin{equation*}
+		\hat{H} \psi(\mathbf{r}) = E \psi(\mathbf{r})
+	\end{equation*}
+	Another way to write it is:
+	\begin{equation*}
+		-\frac{\hbar^2}{2m} \nabla^2 \psi(\mathbf{r}) + V(\mathbf{r}) \psi(\mathbf{r}) = E \psi(\mathbf{r})
+	\end{equation*}
 
 \end{frame}
 
@@ -47,4 +47,19 @@
 	\begin{equation*}
 		\int |\Psi(\mathbf{r}, t)|^2 \, d^3r = 1
 	\end{equation*}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Recipe to solve the general problem}
+
+	\begin{itemize}
+		\item You are given a time independent potential $V(x)$ and the starting wave function $\Psi (x,0)$. The goal is to find $\Psi(x,t)$.
+		\item First solve the time independent Schrödinger equation. This in general, yields an infinite set of solutions $\{\psi_n(x)\}$ each with it's own energy $\{E_n\}$.
+		\item Write down the general linear combinations of these solutions  $$ \Psi(x,0) = \sum_{n=1}^\infty c_n \psi_n(x)$$
+		\item now add each of the corresponding time dependence factors $\exp(-i E_n t /\hbar)$
+		      \[
+			      \Psi(x,t) = \sum_{n=1}^{\infty} c_n \psi_n(x) e^{-iE_n t/ \hbar} = \sum_{n=1}^{\infty} c_n \Psi_n(x,t)
+		      \]
+		      Where $|c_n|^2$ is the probability that a measurement of the energy would return the value $E_n$.
+	\end{itemize}
 \end{frame}
