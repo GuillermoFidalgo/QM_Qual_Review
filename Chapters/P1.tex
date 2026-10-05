@@ -129,27 +129,27 @@
 
 \begin{frame}{Expectation values evolve with time (unlike the normalization of the wave function)}
 	% \begin{block}{Expectation value of an observable}
-		The expectation value of an observable $\hat{A}$ in a state described by the wave function $\Psi(x, t)$ is given by:
-		\begin{equation*}
-			\langle A \rangle = \int_{-\infty}^{+\infty} \Psi^*(x, t) \hat{A} \Psi(x, t) \, dx
-		\end{equation*}
-		where $\hat{A}$ is the operator corresponding to the observable $A$.
+	The expectation value of an observable $\hat{A}$ in a state described by the wave function $\Psi(x, t)$ is given by:
+	\begin{equation*}
+		\langle A \rangle = \int_{-\infty}^{+\infty} \Psi^*(x, t) \hat{A} \Psi(x, t) \, dx
+	\end{equation*}
+	where $\hat{A}$ is the operator corresponding to the observable $A$.
 	% \end{block}
 	So for the position operator $\hat{x}$, the expectation value is:
 	\begin{equation*}
 		\langle x \rangle = \int_{-\infty}^{+\infty} x |\Psi(x, t)|^2 \, dx
 	\end{equation*}
 	The evolution of the expectation value of position with time can be derived from the Schrödinger equation. If we differentiate the expectation value with respect to time, by using integration by parts we get:
-\begin{equation*}
+	\begin{equation*}
 		\dv{\ev{x}}{t} = \int_{-\infty}^{+\infty} -\frac{i\hbar}{m} \Psi^* \pdv{\Psi}{x} \dd{x}
-\end{equation*}
+	\end{equation*}
 
 \end{frame}
 
 \begin{frame}{Note on the expectation value of position}
 
-The expectation value $\ev{x}$ in quantum mechanics does not represent the average of repeated measurements on a single particle. After the first measurement, the wave function collapses, and subsequent measurements just repeat that result. Instead, $\ev{x}$ is the average of measurements made on an ensemble of identically prepared particles, each in the same quantum state.
-To find $\ev{x}$, you must either reset the particle to its original state after each measurement or use many identical particles and measure each one once. The expectation value is thus the average over many identical systems, not repeated measurements on one system.
+	The expectation value $\ev{x}$ in quantum mechanics does not represent the average of repeated measurements on a single particle. After the first measurement, the wave function collapses, and subsequent measurements just repeat that result. Instead, $\ev{x}$ is the average of measurements made on an ensemble of identically prepared particles, each in the same quantum state.
+	To find $\ev{x}$, you must either reset the particle to its original state after each measurement or use many identical particles and measure each one once. The expectation value is thus the average over many identical systems, not repeated measurements on one system.
 
 \end{frame}
 
@@ -175,18 +175,18 @@ To find $\ev{x}$, you must either reset the particle to its original state after
 \subsection{Uncertainty Principle}
 
 \begin{frame}{Uncertainty Principle}
-The wavelength of $\Psi$ is related to the momentum of the particle by the de Broglie formula.
-$$ p = \frac{h}{\lambda} = \frac{2\pi \hbar}{\lambda}$$
+	The wavelength of $\Psi$ is related to the momentum of the particle by the de Broglie formula.
+	$$ p = \frac{h}{\lambda} = \frac{2\pi \hbar}{\lambda}$$
 
-where $h$ is Planck's constant and $p$ is the momentum of the particle.
+	where $h$ is Planck's constant and $p$ is the momentum of the particle.
 
-Thus a spread in wavelength corresponds to a spread in momentum. Quantitatively
-\begin{block}{Uncertainty Principle}
-	\begin{equation*}
-		\sigma_x \sigma_p \ge \frac{\hbar}{2}
-	\end{equation*}
-	where $\sigma_x$ is the uncertainty in position and $\sigma_p$ is the uncertainty in momentum.
-\end{block}
+	Thus a spread in wavelength corresponds to a spread in momentum. Quantitatively
+	\begin{block}{Uncertainty Principle}
+		\begin{equation*}
+			\sigma_x \sigma_p \ge \frac{\hbar}{2}
+		\end{equation*}
+		where $\sigma_x$ is the uncertainty in position and $\sigma_p$ is the uncertainty in momentum.
+	\end{block}
 
 \end{frame}
 
